@@ -21,11 +21,13 @@ function doPost(e) {
     text // メッセージ本文
     trigger_word //outgoing webhookのトリガーに設定しているワード
   */
+
+  // 送信したチャンネルにそのまま返信
   return ContentService.createTextOutput("レスポンス").setMimeType(ContentService.MimeType.JSON);
 }
 
-//スラックにinbound_webhookを使って送信
-function sendPushToSlack() {
+//スラックにinbound_webhookを使って送信する場合
+function sendToSlack() {
   var options = {
     "method" : "POST",
     "payload" : JSON.stringify({

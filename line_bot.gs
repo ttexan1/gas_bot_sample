@@ -1,7 +1,8 @@
 // LINE Developersから取得
 var CHANNEL_ACCESS_TOKEN = '';
 
-function doPost(e) {  //doPost(e)で受け取りユーザーメッセーじにおうむ返しする
+//doPost(e)で受け取りユーザーメッセーじにおうむ返しする
+function doPost(e) {
   var event = JSON.parse(e.postData.contents).events[0];
   var replyToken= event.replyToken;
   if (typeof replyToken === 'undefined') {
